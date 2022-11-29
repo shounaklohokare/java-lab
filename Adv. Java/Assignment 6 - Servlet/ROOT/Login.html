@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #ivory {
+            /* display: flex; */
+            align-items: center;
+            margin: 40px;
+        }
+
+        h1 {
+            margin: 40px;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Enter User Details:</h1>
+
+    <div id="ivory">
+        <br><br>
+        <form action="/Login" method="POST">
+            <label for="username">Enter username: </label>
+            <input type="text" name="username" id="username" placeholder="username" required><br>
+            <label for="passwd">Enter password: </label>
+            <input type="password" name="passwd" id="passwd" placeholder="password"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
