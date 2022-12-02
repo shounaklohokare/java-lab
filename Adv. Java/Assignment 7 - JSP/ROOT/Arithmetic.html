@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form,
+        h1 {
+            margin: 40px;
+        }
+
+        input {
+            padding: 5px;
+            margin-right: 15px;
+            margin-top: 15px;
+        }
+
+        #n1 {
+            margin-left: 4px;
+        }
+
+        label {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Arithmetic Operations</h1>
+    <form action="Arithmetic.jsp" method="GET">
+        <label for="n1">Enter 1st number: </label>
+        <input type="text" id="n1" name="n1" required><br>
+        <label for="n2">Enter 2nd number: </label>
+        <input type="text" id="n2" name="n2" required><br><br>
+        <label for="op1">Addition</label>
+        <input id="op1" type="radio" name="arithmetic" value="add">
+        <label for="op2">Subtraction</label>
+        <input id="op2" type="radio" name="arithmetic" value="sub">
+        <label for="op3">Multiplication</label>
+        <input id="op3" type="radio" name="arithmetic" value="mult">
+        <label for="op4">Division</label>
+        <input id="op4" type="radio" name="arithmetic" value="div"><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+
+</html>
