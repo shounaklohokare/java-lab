@@ -21,7 +21,6 @@ public class Login extends HttpServlet {
             res.sendRedirect("http://localhost:8080/Error.html");
         }
 
-        PrintWriter out = res.getWriter();
 
     }
 
