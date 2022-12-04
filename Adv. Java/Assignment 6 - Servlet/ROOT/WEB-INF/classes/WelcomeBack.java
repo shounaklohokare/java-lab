@@ -4,28 +4,36 @@ import java.io.*;
 
 public class WelcomeBack extends HttpServlet {
 
-    static int i = 1;
-
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         res.setContentType("text/html");
-        int total = 0;
         PrintWriter out = res.getWriter();
 
-        String k = String.valueOf(i);
-        Cookie c = new Cookie("visited", k);
+        Cookie[] cookiesFromClient = req.getCookies();
 
-        res.addCookie(c);
+        int visitorCount = 0;
 
-        int j = Integer.parseInt(c.getValue());
+        Cookie cookie = new Cookie("visitor-count", "");
+        String messageToClient = "";
 
-        if (j == 1) {
-            out.println("Welcome " + req.getRemoteAddr() + "<br>");
-        } else {
-            out.println("Welcome-back " + req.getRemoteAddr() + "<br>");
-            total += 1;
-            out.println(total);
+        if (cookiesFromClient != null) {
+            for (Cookie c : cookiesFromClient) {
+                if (c.getName().equals("visit-count")) {
+                    visitorCount = Integer.parseInt(c.getValue());
+                }
+            }
         }
-        i++;
+
+        cookie.setValue(Integer.toString(++visitorCount));
+        res.addCookie(cookie);
+
+        if (visitorCount <= 1) {
+            messageToClient = "<h1> Welcome, " + req.getRemoteAddr() + "</h1>";
+        } else {
+            messageToClient = "<h1> Welcome back, " + req.getRemoteAddr() + "</h1>";
+        }
+
+        out.write(messageToClient);
+
     }
 }
