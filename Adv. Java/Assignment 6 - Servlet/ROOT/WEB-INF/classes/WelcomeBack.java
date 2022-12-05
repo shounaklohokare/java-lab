@@ -18,7 +18,7 @@ public class WelcomeBack extends HttpServlet {
 
         if (cookiesFromClient != null) {
             for (Cookie c : cookiesFromClient) {
-                if (c.getName().equals("visit-count")) {
+                if (c.getName().equals("visitor-count")) {
                     visitorCount = Integer.parseInt(c.getValue());
                 }
             }
